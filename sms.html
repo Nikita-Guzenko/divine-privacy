@@ -21,7 +21,7 @@
   <p>Prospective CDL Class-A drivers may enroll through the web form below or by texting an opt-in keyword. SMS enrollment is separate from a job application.</p>
 
   <h3>Option 1: Web form</h3>
-  <form action="https://twilio-sip.178.105.245.243.sslip.io/sms/web-opt-in" method="post" accept-charset="UTF-8" style="background:#f8f9fa;border:1px solid #d0d7de;border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+  <form action="/api/sms-opt-in" method="post" accept-charset="UTF-8" style="background:#f8f9fa;border:1px solid #d0d7de;border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
     <input type="hidden" name="disclosure_version" value="2026-10-01">
     <div aria-hidden="true" style="position:absolute;left:-10000px;"><label>Company website <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
     <p><label for="driver-name"><strong>Full name</strong></label><br><input id="driver-name" name="name" type="text" autocomplete="name" required maxlength="120" style="width:100%;box-sizing:border-box;padding:.55rem;font-size:1rem;"></p>
