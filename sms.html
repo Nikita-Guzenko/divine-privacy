@@ -18,54 +18,30 @@
   <p>Divine Enterprises operates an SMS messaging program to communicate with prospective CDL Class-A drivers regarding employment opportunities, application status, interview scheduling, and onboarding requirements.</p>
 
   <h2>How to Opt In</h2>
-  <p>Prospective CDL Class-A drivers may opt in to receive recruiting SMS messages through either of the following direct channels:</p>
+  <p>Prospective CDL Class-A drivers may enroll through the web form below or by texting an opt-in keyword. SMS enrollment is separate from a job application.</p>
 
-  <h3>Channel 1: Online Web Inquiry & Application Form</h3>
-  <p>Prospective drivers can submit an inquiry directly through our online form below. Before submission, drivers must actively check the unchecked consent checkbox:</p>
+  <h3>Option 1: Web form</h3>
+  <form action="https://twilio-sip.178.105.245.243.sslip.io/sms/web-opt-in" method="post" accept-charset="UTF-8" style="background:#f8f9fa;border:1px solid #d0d7de;border-radius:6px;padding:1.25rem;margin:1.25rem 0;">
+    <input type="hidden" name="disclosure_version" value="2026-10-01">
+    <div aria-hidden="true" style="position:absolute;left:-10000px;"><label>Company website <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+    <p><label for="driver-name"><strong>Full name</strong></label><br><input id="driver-name" name="name" type="text" autocomplete="name" required maxlength="120" style="width:100%;box-sizing:border-box;padding:.55rem;font-size:1rem;"></p>
+    <p><label for="driver-phone"><strong>US mobile number</strong></label><br><input id="driver-phone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" placeholder="(916) 555-0123" style="width:100%;box-sizing:border-box;padding:.55rem;font-size:1rem;"></p>
+    <p style="padding:.75rem;background:#fff;border:1px solid #cbd5e1;border-radius:4px;"><label style="display:flex;align-items:flex-start;gap:.6rem;"><input type="checkbox" name="sms_consent" value="yes" required style="margin-top:.35rem;transform:scale(1.15);"><span>Yes, I agree to receive recurring recruiting and application-related SMS text messages from Divine Enterprises at the mobile number provided. Consent is not a condition of employment. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. View the <a href="/sms-terms">SMS Terms</a> and <a href="/sms-privacy">SMS Privacy Notice</a>.</span></label></p>
+    <button type="submit" style="background:#14507d;color:#fff;border:0;border-radius:4px;padding:.7rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;">Yes, sign me up for SMS</button>
+  </form>
 
-  <div style="background: #f8f9fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.25rem; margin: 1.25rem 0;">
-    <form id="recruiting-form" onsubmit="event.preventDefault(); document.getElementById('form-status').style.display='block';">
-      <div style="margin-bottom: 1rem;">
-        <label for="driver-name" style="display: block; font-weight: 600; margin-bottom: 0.25rem;">Full Name *</label>
-        <input type="text" id="driver-name" name="name" required placeholder="John Doe" style="width: 100%; box-sizing: border-box; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px;">
-      </div>
+  <h3>Option 2: Text-in keyword</h3>
+  <p>After reviewing this page, text <strong>START</strong> or <strong>SUBSCRIBE</strong> to <a href="sms:+19167200062?body=START">(916) 720-0062</a>.</p>
+  <p><a href="sms:+19167200062?body=START" style="display:inline-block;background:#14507d;color:#fff;border-radius:4px;padding:.65rem 1.25rem;font-weight:600;text-decoration:none;">Text START to enroll</a></p>
 
-      <div style="margin-bottom: 1rem;">
-        <label for="driver-phone" style="display: block; font-weight: 600; margin-bottom: 0.25rem;">Mobile Phone Number *</label>
-        <input type="tel" id="driver-phone" name="phone" required placeholder="(916) 555-0123" style="width: 100%; box-sizing: border-box; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px;">
-      </div>
-
-      <div style="margin-bottom: 1rem;">
-        <label for="driver-exp" style="display: block; font-weight: 600; margin-bottom: 0.25rem;">CDL-A Experience *</label>
-        <select id="driver-exp" name="experience" required style="width: 100%; box-sizing: border-box; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; background: #fff;">
-          <option value="">Select experience level...</option>
-          <option value="2plus">2+ years CDL-A experience (Qualified)</option>
-          <option value="less2">Less than 2 years</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom: 1.25rem; padding: 0.75rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px;">
-        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; cursor: pointer; line-height: 1.45;">
-          <input type="checkbox" id="sms-consent" name="consent" style="margin-top: 0.2rem; transform: scale(1.15);">
-          <span>
-            By providing your phone number, you authorize Divine Enterprises to send recruiting and application-related SMS text messages to this number. Consent is not a condition of employment. Message frequency varies. Message and data rates may apply. Reply STOP to cancel at any time, HELP for help. View <a href="/sms-terms">Terms</a> and <a href="/sms-privacy">Privacy Policy</a>.
-          </span>
-        </label>
-      </div>
-
-      <button type="submit" style="background: #14507d; color: #fff; border: none; border-radius: 4px; padding: 0.65rem 1.25rem; font-size: 1rem; font-weight: 600; cursor: pointer;">Submit Inquiry</button>
-      <div id="form-status" style="display: none; margin-top: 0.75rem; color: #046a38; font-weight: 600;">Thank you. Your inquiry has been received. Our recruiting team will follow up shortly.</div>
-    </form>
-  </div>
-
-  <p><em>Note: Meta Lead Forms (Facebook & Instagram Ads) utilize the exact same unchecked consent disclosure prior to lead submission.</em></p>
-
-  <h3>Channel 2: Direct Keyword Opt-in (Text-In)</h3>
-  <p>Drivers may also enroll directly by texting <strong>START</strong> or <strong>SUBSCRIBE</strong> to <a href="sms:+19167200062">(916) 720-0062</a> from their mobile device after reviewing our program terms.</p>
+  <p>If you enroll by keyword, you will receive this confirmation:</p>
+  <blockquote style="margin: 1rem 0; padding: 0.85rem 1rem; background: #f8f9fa; border-left: 4px solid #14507d;">
+    Divine Enterprises: You are subscribed to recurring driver recruiting texts. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out. Terms: https://divine-privacy.vercel.app/sms-terms Privacy: https://divine-privacy.vercel.app/sms-privacy
+  </blockquote>
 
   <h2>Terms, Rates & Frequency</h2>
   <p><strong>Message frequency varies</strong> depending on your application activity and engagement with our recruiting team. <strong>Message and data rates may apply.</strong></p>
-  <p>SMS enrollment is completely optional. You can apply for any position without enrolling in text messaging via our online <a href="https://intelliapp.driverapponline.com/c/divinetrans">driver application</a> or by calling our office directly at <a href="tel:+19167200062">(916) 720-0062</a>.</p>
+  <p>SMS enrollment is optional and is not a condition of employment. You can apply for any position without enrolling in text messaging via our online <a href="https://intelliapp.driverapponline.com/c/divinetrans">driver application</a> or by calling our office directly at <a href="tel:+19167200062">(916) 720-0062</a>.</p>
 
   <h2>Opt-Out & Support</h2>
   <p><strong>Reply STOP to cancel:</strong> You can opt out at any time by replying <strong>STOP</strong> to any message from Divine Enterprises. You will receive one final confirmation message confirming you are unsubscribed.</p>
