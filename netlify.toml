@@ -1,0 +1,50 @@
+# Netlify equivalent of vercel.json (static site, no build step).
+[build]
+  publish = "."
+  command = ""
+
+# vercel.json rewrite: proxy the SMS web opt-in endpoint.
+[[redirects]]
+  from = "/api/sms-opt-in"
+  to = "https://twilio-sip.178.105.245.243.sslip.io/sms/web-opt-in"
+  status = 200
+  force = true
+
+# vercel.json "cleanUrls": true — /page.html redirects to /page (Netlify already
+# serves /page from page.html and 301s /page/ to /page, matching "trailingSlash": false).
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/sms.html"
+  to = "/sms"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/sms-privacy.html"
+  to = "/sms-privacy"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/sms-terms.html"
+  to = "/sms-terms"
+  status = 308
+  force = true
+
+# Vercel never served its config file; do not publish it here either.
+[[redirects]]
+  from = "/vercel.json"
+  to = "/404"
+  status = 404
+  force = true
